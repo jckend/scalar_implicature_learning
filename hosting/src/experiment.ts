@@ -707,7 +707,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var instructions0 = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>You will be presented with two images. Select the image you think is likelier to fit the description.</p>
+    <p>You will be presented with two images, and a description provided another participant. Given the description, select the image you think the participant intended to describe.</p>
     <p>If the likelier image is on the left, press the left arrow <kbd>&larr;</kbd> on the keyboard as fast as you can. If the likelier image is on the right, press the right arrow <kbd>&rarr;</kbd> as fast as you can.</p>
     <center>
     <div style='width: 700px;'><img src='${imgBurg2}'></img>
@@ -753,7 +753,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var instructions1 = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>You will be presented with two images. Select the image you think is likelier to fit the description.</p>
+    <p>You will be presented with two images, and a description provided another participant. Given the description, select the image you think the participant intended to describe.</p>
     <p>If the likelier image is on the left, press the left arrow <kbd>&larr;</kbd> on the keyboard as fast as you can. If the likelier image is on the right, press the right arrow <kbd>&rarr;</kbd> as fast as you can.</p>
     <center>
     <div style='width: 700px;'><img src='${imgSnail1}'></img>
@@ -769,7 +769,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   const test_procedure = {
     timeline: [fixation, question, test],
     timeline_variables: trials,
-    repetitions: 1,
+    repetitions: 5,
     randomize_order: true,
   }
   timeline.push(test_procedure)
