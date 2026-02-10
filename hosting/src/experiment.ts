@@ -374,7 +374,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgCouples2,
     stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],\
+    choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowRight', 
     prompt: '<p><b>Two men are holding hands</b>.</p>',
     trial_duration: 4000,
