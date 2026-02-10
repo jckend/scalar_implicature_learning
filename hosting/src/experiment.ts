@@ -774,6 +774,23 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(test_procedure)
 
+  /* define debrief */
+  const debrief_block = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: function () {
+      const trials = jsPsych.data.get().filter({ task: 'response' })
+      const correct_trials = trials.filter({ correct: true })
+      const accuracy = Math.round((correct_trials.count() / trials.count()) * 100)
+      const rt = Math.round(correct_trials.select('rt').mean())
+
+      return `<p>You responded correctly on ${accuracy.toString()}% of the trials.</p>
+          <p>Your average response time was ${rt.toString()}ms.</p>
+          <p>Press any key to complete the experiment. Thank you!</p>`
+    },
+  }
+  timeline.push(debrief_block)
+
+
   /* start the experiment */
   // @ts-expect-error allow timeline to be type jsPsych TimelineArray
   await jsPsych.run(timeline)
