@@ -735,10 +735,10 @@ export async function runExperiment(updateDebugPanel: () => void) {
     trial_duration: 4000,
     data: {
       task: 'response' satisfies Task,
-      // correct_response: jsPsych.timelineVariable('correct_response') as unknown as string,
+      correct_response: jsPsych.timelineVariable('correct_response') as unknown as string,
     },
     on_finish: function (data: TrialData) {
-      // data.correct = jsPsych.pluginAPI.compareKeys(data.response || null, data.correct_response || null)
+      data.correct = jsPsych.pluginAPI.compareKeys(data.response || null, data.correct_response || null)
       data.saveIncrementally = true
     },
   }
@@ -810,7 +810,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   const test_procedure = {
     timeline: [fixation, question, test],
     timeline_variables: trials,
-    repetitions: 5,
+    repetitions: 1,
     randomize_order: true,
   }
   timeline.push(test_procedure)
