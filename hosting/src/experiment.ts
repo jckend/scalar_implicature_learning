@@ -203,16 +203,6 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-  var few_trial0 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgBeaver2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>Few items are beavers</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
 
   var heat_trial0 = {
     type: jsPsychImageKeyboardResponse,
@@ -251,6 +241,17 @@ export async function runExperiment(updateDebugPanel: () => void) {
   /* define trial variables for cooperative trials */
   var few_trial1 = {
     type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Few items are beavers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var few_trial2 = {
+    type: jsPsychImageKeyboardResponse,
     stimulus: imgBurg1,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
@@ -260,7 +261,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-  var few_trial2 = {
+  var few_trial3 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgSax1,
     stimulus_width: 700,
@@ -595,7 +596,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-
+  // low, elapsed trials 
   var time_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTime1,
@@ -609,6 +610,17 @@ export async function runExperiment(updateDebugPanel: () => void) {
 
   var time_trial2 = {
     type: jsPsychImageKeyboardResponse,
+    stimulus: imgTime1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The time has elapsed</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var time_trial3 = {
+    type: jsPsychImageKeyboardResponse,
     stimulus: imgTime2,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
@@ -618,18 +630,42 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
+  var time_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTime2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The time is running low</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+
+  // okay, did well trials 
   var okay_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgPartic1,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowRight', 
-    prompt: '<p><b>The person who medaled did okay</b>.</p>',
+    prompt: '<p><b>The person who medaled did well</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
 
   var okay_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPartic1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The person who medaled won</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var okay_trial3 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgPartic2,
     stimulus_width: 700,
@@ -640,11 +676,24 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
+  var okay_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPartic2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The person who medaled did well</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+
   
-  const training = [all_trial0, most_trial0, few_trial0, some_trial0, adhoc_trial0, heat_trial0]
+  const training = [all_trial0, most_trial0, some_trial0, adhoc_trial0, heat_trial0]
   const trials = [
     few_trial1,
     few_trial2,
+    few_trial3,
     no_trial2,
     no_trial1,
     some_trial1,
@@ -671,8 +720,12 @@ export async function runExperiment(updateDebugPanel: () => void) {
     price_trial2,
     time_trial1, 
     time_trial2,
+    time_trial3, 
+    time_trial4,
     okay_trial1,
-    okay_trial2
+    okay_trial2, 
+    okay_trial3,
+    okay_trial4
   ]
 
   /* consent */
