@@ -519,6 +519,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
+  // dark, black trials 
   var hair_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgDark2,
@@ -530,28 +531,40 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-  var partic_trial1 = {
+  var hair_trial2 = {
     type: jsPsychImageKeyboardResponse,
-    stimulus: imgPartic2,
+    stimulus: imgDark2,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>The medal was won by a participant</b>.</p>',
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The man has black hair</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
 
-  var partic_trial2 = {
+  var hair_trial3 = {
     type: jsPsychImageKeyboardResponse,
-    stimulus: imgPartic1,
+    stimulus: imgDark1,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>The medal was won by a participant</b>.</p>',
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The man has dark hair</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
 
+  var hair_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgDark1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The man has black hair</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  // warm, hot trials 
   var warm_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgWarm1,
@@ -565,6 +578,17 @@ export async function runExperiment(updateDebugPanel: () => void) {
 
   var warm_trial2 = {
     type: jsPsychImageKeyboardResponse,
+    stimulus: imgWarm1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The item is warm</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var warm_trial3 = {
+    type: jsPsychImageKeyboardResponse,
     stimulus: imgWarm2,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
@@ -574,6 +598,18 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
+  var warm_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgWarm2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The item is hot</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  // cheap, free trials 
   var price_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgPrice1,
@@ -587,11 +623,33 @@ export async function runExperiment(updateDebugPanel: () => void) {
 
   var price_trial2 = {
     type: jsPsychImageKeyboardResponse,
+    stimulus: imgPrice1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The item is free</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var price_trial3 = {
+    type: jsPsychImageKeyboardResponse,
     stimulus: imgPrice2,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowRight', 
     prompt: '<p><b>The item is free</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var price_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPrice2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The item is cheap</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
@@ -703,6 +761,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
     some_trial5,
     some_trial6,
     most_trial1,
+    all_trial1,
+    all_trial2,
     adhoc_trial1,
     adhoc_trial2,
     adhoc_trial3,
@@ -712,12 +772,17 @@ export async function runExperiment(updateDebugPanel: () => void) {
     adhoc_trial7,
     adhoc_trial8,
     hair_trial1,
+    hair_trial2,
+    hair_trial3,
+    hair_trial4,
     warm_trial1,
     warm_trial2,
-    all_trial1,
-    all_trial2,
+    warm_trial3,
+    warm_trial4,
     price_trial1,
     price_trial2,
+    price_trial3,
+    price_trial4,
     time_trial1, 
     time_trial2,
     time_trial3, 
