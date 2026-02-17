@@ -181,16 +181,6 @@ export async function runExperiment(updateDebugPanel: () => void) {
   timeline.push(welcome)
 
   /* define trial variables for training trials */
-  var all_trial0 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgBeaver1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<center><b>All items are ginger roots</b>.</center>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
 
     var most_trial0 = {
     type: jsPsychImageKeyboardResponse,
@@ -199,18 +189,6 @@ export async function runExperiment(updateDebugPanel: () => void) {
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowLeft', 
     prompt: '<p><b>Most items are whales</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-
-  var heat_trial0 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgVolcano1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>The item is warm</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
@@ -237,74 +215,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-
-  /* define trial variables for cooperative trials */
-  var few_trial1 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgBeaver2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>Few items are beavers</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var few_trial2 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgBurg1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>Few items are spoons</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var few_trial3 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgSax1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>Few items are clamps</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var no_trial2 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgSax2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>No items are clamps</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var no_trial1 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgGorilla2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>No items are snakes</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var heat_trial1 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgWarm1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>The item on the card is warm</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
+  // some trials 
   var some_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgGorilla1,
@@ -371,98 +282,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-  var adhoc_trial1 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgCouples2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>Two men are holding hands</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var adhoc_trial2 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgCouples1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>A man is wearing a teal shirt</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-  var adhoc_trial3 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgAvocado1,
-    stimulus_height: 700,
-    stimulus_width: 700, 
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>There is an avocado at the top</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-    var adhoc_trial4 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgAvocado2,
-    stimulus_height: 700,
-    stimulus_width: 700, 
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>There is an avocado at the top</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-    var adhoc_trial5 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgTube1,
-    stimulus_height: 700,
-    stimulus_width: 700, 
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>There is a tube at the top</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-    var adhoc_trial6 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgTube2,
-    stimulus_height: 700,
-    stimulus_width: 700, 
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>There is a tube on the bottom</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-    var adhoc_trial7 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgPetri1,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>There are two petri dishes</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-
-    var adhoc_trial8 = {
-    type: jsPsychImageKeyboardResponse,
-    stimulus: imgPetri2,
-    stimulus_width: 700,
-    choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowRight', 
-    prompt: '<p><b>There is a petri dish on the right</b>.</p>',
-    trial_duration: 4000,
-    response_ends_trial: true,
-  }
-  
+  // most trials 
   var most_trial1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgBurg2,
@@ -474,7 +294,86 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
+  var most_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBurg1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Most items are burgers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var most_trial3 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgGorilla1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Most items are gorillas</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+  
+  var most_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgGorilla2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Most items are gorillas</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var most_trial5 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgSax1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Most items are saxophones</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var most_trial6 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgSax2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Most items are saxophones</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+
+  // all trials (controls) 
   var all_trial1 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<center><b>All items are ginger roots</b>.</center>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var all_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<center><b>All items are ginger roots</b>.</center>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var all_trial3 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgBurg1,
     stimulus_width: 700,
@@ -485,7 +384,18 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-  var all_trial2 = {
+  var all_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBurg2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>All the items are burgers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var all_trial5 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgSnail1,
     stimulus_width: 700,
@@ -496,28 +406,338 @@ export async function runExperiment(updateDebugPanel: () => void) {
     response_ends_trial: true,
   }
 
-
-  var most_trial3 = {
+  var all_trial6 = {
     type: jsPsychImageKeyboardResponse,
-    stimulus: imgGorilla1,
+    stimulus: imgSnail2,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>Most items are gorillas</b>.</p>',
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>All the items are spoons</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
 
-  var most_trial4 = {
+
+  // few trials 
+  var few_trial1 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRightt', 
+    prompt: '<p><b>Few items are beavers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+  
+  var few_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Few items are beavers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var few_trial3 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBurg1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Few items are spoons</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var few_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBurg2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Few items are spoons</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+  
+  var few_trial5 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgSax1,
     stimulus_width: 700,
     choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>Most items are saxophones</b>.</p>',
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Few items are clamps</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   }
+
+  var few_trial6 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgSax2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Few items are clamps</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+
+  // no trials (controls) 
+  var no_trial1 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgGorilla2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>No items are snakes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var no_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgGorilla1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>No items are snakes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var no_trial3 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgSax1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>No items are clamps</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var no_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgSax2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>No items are clamps</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var no_trial5 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBeaver2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>No items are beavers</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var no_trial6 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgBurg1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>No items are spoons</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  // ad hoc trials 
+  var adhoc_trial1 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgCouples1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>The man on the right is wearing a teal shirt</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgCouples1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>Two men are holding hands</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial3 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgCouples2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>Two men are holding hands</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial4 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgCouples2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The man on the right is wearing a teal shirt</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial5 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgAvocado1,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There is an avocado at the top</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial6 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgAvocado1,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>There are two avocados</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial7 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgAvocado2,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>There is an avocado at the top</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial8 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgAvocado2,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There are two avocados</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial9 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTube1,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There is a test tube on the bottom</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial10 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTube1,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There are two test tubes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial11 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTube2,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There is a test tube on the bottom</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial12 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTube2,
+    stimulus_height: 700,
+    stimulus_width: 700, 
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>There are two test tubes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial13 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPetri1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There are two petri dishes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial14 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPetri1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>There is a petri dish on the right</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial15 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPetri2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There is a petri dish on the right</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
+  var adhoc_trial16 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgPetri2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>There are two petri dishes</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  }
+
 
   // dark, black trials 
   var hair_trial1 = {
@@ -747,13 +967,20 @@ export async function runExperiment(updateDebugPanel: () => void) {
 
 
   
-  const training = [all_trial0, most_trial0, some_trial0, adhoc_trial0, heat_trial0]
+  const training = [most_trial0, some_trial0, adhoc_trial0]
   const trials = [
     few_trial1,
     few_trial2,
     few_trial3,
-    no_trial2,
+    few_trial4,
+    few_trial5, 
+    few_trial6, 
     no_trial1,
+    no_trial2,
+    no_trial3,
+    no_trial4,
+    no_trial5,
+    no_trial6,
     some_trial1,
     some_trial2,
     some_trial3,
@@ -761,8 +988,17 @@ export async function runExperiment(updateDebugPanel: () => void) {
     some_trial5,
     some_trial6,
     most_trial1,
+    most_trial2, 
+    most_trial3,
+    most_trial4, 
+    most_trial5,
+    most_trial6,
     all_trial1,
     all_trial2,
+    all_trial3, 
+    all_trial4, 
+    all_trial5, 
+    all_trial6,
     adhoc_trial1,
     adhoc_trial2,
     adhoc_trial3,
@@ -771,6 +1007,14 @@ export async function runExperiment(updateDebugPanel: () => void) {
     adhoc_trial6,
     adhoc_trial7,
     adhoc_trial8,
+    adhoc_trial9,
+    adhoc_trial10,
+    adhoc_trial11,
+    adhoc_trial12,
+    adhoc_trial13,
+    adhoc_trial14,
+    adhoc_trial15,
+    adhoc_trial16,
     hair_trial1,
     hair_trial2,
     hair_trial3,
@@ -924,7 +1168,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(instructions1)
 
-  /* define test procedure */
+  /* define inititial test procedures */
   const test_procedure = {
     timeline: [fixation, question, test],
     timeline_variables: trials,
