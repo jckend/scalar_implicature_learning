@@ -985,8 +985,6 @@ export async function runExperiment(updateDebugPanel: () => void) {
     all_trial2,
     all_trial3, 
     all_trial4, 
-    all_trial5, 
-    all_trial6,
     adhoc_trial1,
     adhoc_trial2,
     adhoc_trial3,
