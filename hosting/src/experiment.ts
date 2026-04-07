@@ -1094,8 +1094,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
 
 
-  /* define instructions for training trials*/
-  var instructions0 = {
+  /* instructions*/
+  var instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
     <p>You will be presented with two images, and a description provided another participant. Given the description, select the image you think the participant intended to describe.</p>
@@ -1108,24 +1108,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
   `,
     post_trial_gap: 2000,
   }
-  timeline.push(instructions0)
+  timeline.push(instructions)
   
-  /* instructions */
-  var instructions1 = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: `
-    <p>You will be presented with two images, and a description provided another participant. Given the description, select the image you think the participant intended to describe.</p>
-    <p>If the likelier image is on the left, press the left arrow <kbd>&larr;</kbd> on the keyboard as fast as you can. If the likelier image is on the right, press the right arrow <kbd>&rarr;</kbd> as fast as you can.</p>
-    <center>
-    <div style='width: 700px;'><img src='${imgSnail1}'></img>
-    </div>
-    </center>
-    <p>Press any key to begin.</p>
-  `,
-    post_trial_gap: 2000,
-  }
-  timeline.push(instructions1)
-
   /* define inititial test procedures */
   const test_procedure = {
     timeline: [fixation, question, test],
