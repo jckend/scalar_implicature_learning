@@ -964,11 +964,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
     trial_duration: 4000,
     response_ends_trial: true,
   }
-
-
-  
-  const training = [most_trial0, some_trial0, adhoc_trial0]
-  const trials = [
+    const trials = [
     few_trial1,
     few_trial2,
     few_trial3,
@@ -1114,37 +1110,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(instructions0)
   
-  /* define training procedure */
-  const test_procedure0 = {
-    timeline: [fixation, question, test],
-    timeline_variables: training,
-    repetitions: 1,
-    randomize_order: true,
-  }
-  timeline.push(test_procedure0)
-  
-  var more_training = {
-    type: jsPsychHtmlKeyboardResponse,
-    stimulus: 'You have completed the training trials. Press <b>C</b> to continue to the experiment. Press any other key to repeat the training trials'
-  }
-  timeline.push(more_training)
-  
-  var if_node = {
-    timeline: [test_procedure0],
-    conditional_function: function(){
-        // get the data from the previous trial,
-        // and check which key was pressed
-        var data = jsPsych.data.get().last(1).values()[0];
-        if(jsPsych.pluginAPI.compareKeys(data.response, 'c')){
-            return false;
-        } else {
-            return true;
-        }
-    }
-  }
-  timeline.push(if_node)
-
-  /* define instructions for main trial */
+  /* instructions */
   var instructions1 = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
