@@ -49,6 +49,9 @@ import imgPrice1 from './images/free_two1.png'
 import imgPrice2 from './images/free_two2.png'
 import imgTime1 from './images/low_depleted1.png'
 import imgTime2 from './images/low_depleted2.png'
+import imgTest1 from './images/checkx1.jpg' 
+import imgTest2 from './images/checkx2.jpg' 
+
 
 
 /* Alternatively
@@ -963,7 +966,37 @@ export async function runExperiment(updateDebugPanel: () => void) {
     prompt: '<p><b>The person who medaled did well</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
-  }
+  } 
+
+  // test trials 
+  
+  var test1 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTest1,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The correct image is on the right</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  } 
+
+  var test2 = {
+    type: jsPsychImageKeyboardResponse,
+    stimulus: imgTest2,
+    stimulus_width: 700,
+    choices: ['ArrowLeft', 'ArrowRight'],
+    correct_response: 'ArrowLeft', 
+    prompt: '<p><b>The correct image is on the left</b>.</p>',
+    trial_duration: 4000,
+    response_ends_trial: true,
+  } 
+
+
+    const test_trials = [
+    test1, 
+    test2]
+
     const trials = [
     few_trial1,
     few_trial2,
@@ -1107,6 +1140,36 @@ export async function runExperiment(updateDebugPanel: () => void) {
     post_trial_gap: 2000,
   }
   timeline.push(instructions)
+
+  const test_procedure0 = {
+    timeline: [fixation, question, test],
+    timeline_variables: test_trials,
+    repetitions: 2,
+    randomize_order: true,
+  }
+  timeline.push(test_procedure0)
+
+  var instructions_trial = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<p>This marks the end of the training trials.</p><p>Press C to continue to the main experiment, and any other key to repeat the training trials.</p>',
+    choices: ['y', 'n']
+  };
+
+  var if_node = {
+    timeline: [test_procedure0],
+    conditional_function: function(){
+        // get the data from the previous trial,
+        // and check which key was pressed
+        var data = jsPsych.data.get().last(1).values()[0];
+        if(jsPsych.pluginAPI.compareKeys(data.response, 'c')){
+            return false;
+        } else {
+            return true;
+        }
+    }
+  }
+  timeline.push(if_node)
+
   
   /* define inititial test procedures */
   const test_procedure = {
