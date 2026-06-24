@@ -973,7 +973,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest1,
-    stimulus_width: 700,
+    stimulus_width: 350,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowLeft', 
     prompt: '<p><b>The correct image is on the right</b>.</p>',
@@ -984,7 +984,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test2 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest2,
-    stimulus_width: 700,
+    stimulus_width: 350,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowLeft', 
     prompt: '<p><b>The correct image is on the left</b>.</p>',
@@ -1149,11 +1149,12 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(test_procedure0)
 
-  var instructions_trial = {
+  var end_trials = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: '<p>This marks the end of the training trials.</p><p>Press C to continue to the main experiment, and any other key to repeat the training trials.</p>',
     choices: ['y', 'n']
   };
+  timeline.push(end_trials)
 
   var if_node = {
     timeline: [test_procedure0],
