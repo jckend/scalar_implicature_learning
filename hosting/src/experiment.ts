@@ -1112,7 +1112,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   const test_procedure = {
     timeline: [fixation, question, test],
     timeline_variables: trials,
-    repetitions: 1,
+    repetitions: 2,
     randomize_order: true,
   }
   timeline.push(test_procedure)
