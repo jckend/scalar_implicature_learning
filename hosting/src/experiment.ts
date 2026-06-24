@@ -973,10 +973,10 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest1,
-    stimulus_width: 350,
+    stimulus_width: 100,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowLeft', 
-    prompt: '<p><b>The correct image is on the right</b>.</p>',
+    prompt: '<p><b>When the image is shown, press the left arrow <kbd>&larr;</kbd> key as quickly as possible</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   } 
@@ -984,10 +984,10 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test2 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest2,
-    stimulus_width: 350,
+    stimulus_width: 100,
     choices: ['ArrowLeft', 'ArrowRight'],
-    correct_response: 'ArrowLeft', 
-    prompt: '<p><b>The correct image is on the left</b>.</p>',
+    correct_response: 'ArrowRight', 
+    prompt: '<p><b>When the image is shown, press the right arrow <kbd>&rarr;</kbd> key as quickly as possible</b>.</p>',
     trial_duration: 4000,
     response_ends_trial: true,
   } 
@@ -1141,6 +1141,12 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(instructions)
 
+  var end_trials = {
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: '<p>Before continuing to the main experiment, you will be given a series of trials to familiarize yourself with responding.</p><p>Press any key to begin.</p> ',
+  };
+  timeline.push(end_trials)
+
   const test_procedure0 = {
     timeline: [fixation, question, test],
     timeline_variables: test_trials,
@@ -1151,8 +1157,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
 
   var end_trials = {
     type: jsPsychHtmlKeyboardResponse,
-    stimulus: '<p>This marks the end of the training trials.</p><p>Press C to continue to the main experiment, and any other key to repeat the training trials.</p>',
-    choices: ['y', 'n']
+    stimulus: '<p>This marks the end of the training trials.</p><p>Press C to continue to the main experiment or R to repeat the training trials.</p>',
+    choices: ['c', 'r']
   };
   timeline.push(end_trials)
 
@@ -1171,6 +1177,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   }
   timeline.push(if_node)
 
+  timeline.push(instructions)
   
   /* define inititial test procedures */
   const test_procedure = {
