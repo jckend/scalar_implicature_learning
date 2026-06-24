@@ -1096,7 +1096,7 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-    <p>You will be presented with two images, and a description provided another participant. Given the description, select the image you think the participant intended to describe.</p>
+    <p>You will be presented with two images, and a description intended to refer to one of the two images. Given the description, select the image you think that the description refers to.</p>
     <p>If the likelier image is on the left, press the left arrow <kbd>&larr;</kbd> on the keyboard as fast as you can. If the likelier image is on the right, press the right arrow <kbd>&rarr;</kbd> as fast as you can.</p>
     <center>
     <div style='width: 700px;'><img src='${imgBurg2}'></img>
