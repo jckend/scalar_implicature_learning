@@ -49,8 +49,8 @@ import imgPrice1 from './images/free_two1.png'
 import imgPrice2 from './images/free_two2.png'
 import imgTime1 from './images/low_depleted1.png'
 import imgTime2 from './images/low_depleted2.png'
-import imgTest1 from './images/checkx1.jpg' 
-import imgTest2 from './images/checkx2.jpg' 
+import imgTest1 from './images/checkandxmark.png' 
+import imgTest2 from './images/xmarkandcheck.png' 
 
 
 
