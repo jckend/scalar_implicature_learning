@@ -973,8 +973,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test1 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest1,
-    stimulus_width: 100,
-    stimulus_height:100,
+    stimulus_width: 50,
+    stimulus_height: 50,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowLeft', 
     prompt: '<p><b>When the image is shown, press the left arrow <kbd>&larr;</kbd> key as quickly as possible</b>.</p>',
@@ -985,8 +985,8 @@ export async function runExperiment(updateDebugPanel: () => void) {
   var test2 = {
     type: jsPsychImageKeyboardResponse,
     stimulus: imgTest2,
-    stimulus_width: 100,
-    stimulus_height:100,
+    stimulus_width: 50,
+    stimulus_height: 50,
     choices: ['ArrowLeft', 'ArrowRight'],
     correct_response: 'ArrowRight', 
     prompt: '<p><b>When the image is shown, press the right arrow <kbd>&rarr;</kbd> key as quickly as possible</b>.</p>',
